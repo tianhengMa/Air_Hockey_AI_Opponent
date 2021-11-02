@@ -18,10 +18,10 @@ public class GameManager : MonoBehaviour
     Rigidbody2D rBodyPuck;
     Rigidbody2D rBodyRedPlayer;
     Rigidbody2D rBodyBluePlayer;
-    Vector2 RedPlayerStartPos = new Vector2(-4f, 0);
-    Vector2 BluePlayerStartPos = new Vector2(4f, 0);
-    Vector2 PuckStartPos1 = new Vector2(-2f, 0);
-    Vector2 PuckStartPos2 = new Vector2(2f, 0);
+    Vector2 RedPlayerStartPos = new Vector2(0f, -6);
+    Vector2 BluePlayerStartPos = new Vector2(0f, 6);
+    Vector2 PuckStartPos1 = new Vector2(0f, -4f);
+    Vector2 PuckStartPos2 = new Vector2(0f, 4f);
     int MAX_STUCK_TIME = 30;
     int RedPlayerScore;
     int BluePlayerScore;
@@ -101,6 +101,7 @@ public class GameManager : MonoBehaviour
     }
 
     void RestartLevel(){
+        //Debug.Log("Restart Level!!");
         // Randomly choose Puck start position
         if (Random.Range(0,10) > 5){
             Puck.transform.localPosition = PuckStartPos1;

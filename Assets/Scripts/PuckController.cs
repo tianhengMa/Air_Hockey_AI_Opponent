@@ -16,10 +16,10 @@ public class PuckController : MonoBehaviour
     }
 
     void Update() {
-        if (transform.position.x <= RedGoal.position.x) { //ball touched red goal
+        if (transform.position.y <= RedGoal.position.y) { //ball touched red goal
             gameManager.Scored(PlayerId.Blue);
         }
-        if (transform.position.x >= BlueGoal.position.x) { //ball touched blue goal
+        if (transform.position.y >= BlueGoal.position.y) { //ball touched blue goal
             gameManager.Scored(PlayerId.Red);
         }
     }
