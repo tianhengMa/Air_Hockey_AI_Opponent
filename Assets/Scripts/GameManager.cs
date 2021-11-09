@@ -5,6 +5,11 @@ using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 
+public enum PlayerId
+{
+    Red = 0,
+    Blue = 1
+}
 public class GameManager : MonoBehaviour
 {
     [SerializeField] GameObject Puck;
@@ -20,8 +25,9 @@ public class GameManager : MonoBehaviour
     Rigidbody2D rBodyBluePlayer;
     Vector2 RedPlayerStartPos = new Vector2(0f, -6);
     Vector2 BluePlayerStartPos = new Vector2(0f, 6);
-    Vector2 PuckStartPos1 = new Vector2(0f, -4f);
-    Vector2 PuckStartPos2 = new Vector2(0f, 4f);
+    Vector2 PuckStartPosRed = new Vector2(0f, -4f);
+    Vector2 PuckStartPosBlue = new Vector2(0f, 4f);
+    PlayerId PuckStartSide = PlayerId.Red;
     int MAX_STUCK_TIME = 30;
     int RedPlayerScore;
     int BluePlayerScore;
@@ -61,13 +67,15 @@ public class GameManager : MonoBehaviour
             BluePlayerScore += 1;
             BlueAgent.AddReward(1);
             RedAgent.AddReward(-1);
-            //Debug.Log("Blue Score!! Current Score: Red: " + RedPlayerScore + " Blue: " + BluePlayerScore);
+            PuckStartSide =  PlayerId.Red; // Losing side start the game next round
+            Debug.Log("Blue Score!! Current Score: Red: " + RedPlayerScore + " Blue: " + BluePlayerScore);
         }
         else {
             RedPlayerScore += 1;
             RedAgent.AddReward(1);
             BlueAgent.AddReward(-1);
-            //Debug.Log("Red Score!! Current Score: Red: " + RedPlayerScore + " Blue: " + BluePlayerScore);
+            PuckStartSide =  PlayerId.Blue;
+            Debug.Log("Red Score!! Current Score: Red: " + RedPlayerScore + " Blue: " + BluePlayerScore);
         }
         RedAgent.EndEpisode();
         BlueAgent.EndEpisode();
@@ -102,11 +110,11 @@ public class GameManager : MonoBehaviour
 
     void RestartLevel(){
         //Debug.Log("Restart Level!!");
-        // Randomly choose Puck start position
-        if (Random.Range(0,10) > 5){
-            Puck.transform.localPosition = PuckStartPos1;
+        // Losing side start the game next round
+        if (PuckStartSide ==  PlayerId.Red){
+            Puck.transform.localPosition = PuckStartPosRed;
         } else {
-            Puck.transform.localPosition = PuckStartPos2;
+            Puck.transform.localPosition = PuckStartPosBlue;
         }
         rBodyPuck.velocity = Vector2.zero;
 
@@ -118,14 +126,4 @@ public class GameManager : MonoBehaviour
 
         puckStuck = false;
     }
-
-    /*
-    public float distancePuck2RayAI() {
-        Vector3 playerDirection = rBodyRedPlayer.velocity.normalized;
-        Vector3 playerStartingPoint = RedPlayer.transform.position;
-        
-        Ray ray = new Ray(playerStartingPoint, playerDirection);
-        return Vector3.Cross(ray.direction, Puck.transform.position - ray.origin).magnitude;
-    }
-    */
 }

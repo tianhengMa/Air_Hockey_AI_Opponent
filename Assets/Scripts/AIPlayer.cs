@@ -3,11 +3,6 @@ using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
 
-public enum PlayerId
-{
-    Red = 0,
-    Blue = 1
-}
 public class AIPlayer : Agent
 {
     public PlayerId playerId; // Red = 0, Blue = 1
@@ -32,36 +27,34 @@ public class AIPlayer : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         // AIPlayer Distance Observation
-        /*
+        
         Vector2 AIPlayerToPuck = Puck.transform.localPosition - Player.transform.localPosition;
-        Vector2 AIPlayerToBlueGoal = BlueGoal.transform.localPosition - Player.transform.localPosition;
-        Vector2 AIPlayerToRedGoal = RedGoal.transform.localPosition - Player.transform.localPosition;
-        sensor.AddObservation(AIPlayerToPuck);
-        Debug.Log(AIPlayerToPuck);
+        //Vector2 AIPlayerToBlueGoal = BlueGoal.transform.localPosition - Player.transform.localPosition;
+        //Vector2 AIPlayerToRedGoal = RedGoal.transform.localPosition - Player.transform.localPosition;
+        sensor.AddObservation(AIPlayerToPuck.normalized);
         sensor.AddObservation(AIPlayerToPuck.magnitude);
-        sensor.AddObservation(AIPlayerToBlueGoal);
-        sensor.AddObservation(AIPlayerToRedGoal);
-        */
-
+        //sensor.AddObservation(AIPlayerToBlueGoal);
+        //sensor.AddObservation(AIPlayerToRedGoal);
+    
         // Position Observation
-        Vector2 PlayerPos = Player.transform.localPosition;
-        Vector2 OpponentPos = Opponent.transform.localPosition;
-        Vector2 PuckPos = Puck.transform.localPosition;
-        Vector2 BlueGoalPos = BlueGoal.transform.localPosition;
-        Vector2 RedGoalPos = RedGoal.transform.localPosition;
-        sensor.AddObservation(PlayerPos);
-        sensor.AddObservation(OpponentPos);
-        sensor.AddObservation(PuckPos);
-        sensor.AddObservation(BlueGoalPos);
-        sensor.AddObservation(RedGoalPos);
+        //Vector2 PlayerPos = Player.transform.localPosition;
+        //Vector2 OpponentPos = Opponent.transform.localPosition;
+        //Vector2 PuckPos = Puck.transform.localPosition;
+        //Vector2 BlueGoalPos = BlueGoal.transform.localPosition;
+        //Vector2 RedGoalPos = RedGoal.transform.localPosition;
+        //sensor.AddObservation(PlayerPos.normalized);
+        //sensor.AddObservation(OpponentPos.normalized);
+        //sensor.AddObservation(PuckPos.normalized);
+        //sensor.AddObservation(BlueGoalPos.normalized);
+        //sensor.AddObservation(RedGoalPos.normalized);
 
         // Velocity Observation
         Vector2 PlayerVelocity = rBodyPlayer.velocity;
-        Vector2 OpponentVelocity = rBodyOpponent.velocity;
+        //Vector2 OpponentVelocity = rBodyOpponent.velocity;
         Vector2 PuckVelocity = rBodyPuck.velocity;
-        sensor.AddObservation(PlayerVelocity);
-        sensor.AddObservation(OpponentVelocity);
-        sensor.AddObservation(PuckVelocity);
+        sensor.AddObservation(PlayerVelocity.normalized);
+        //sensor.AddObservation(OpponentVelocity.normalized);
+        sensor.AddObservation(PuckVelocity.normalized);
     }
     
     public float forceMultiplier = 10;
