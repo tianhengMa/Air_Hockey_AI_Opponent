@@ -28,12 +28,12 @@ public class PuckController : MonoBehaviour
 
         // Puck switched from Red half court to Blue half court, award Red
         if (lastPosY <= 0 && transform.localPosition.y > 0) {
-            Debug.Log("Puck switch halfcourt: Red -> Blue award red 0.0002");
+            //Debug.Log("Puck switch halfcourt: Red -> Blue award red 0.0002");
             gameManager.RedReward(0.0002f);
         } 
         // Puck switched from Blue half court to Red half court, award Blue
         else if (lastPosY >= 0 && transform.localPosition.y < 0) {
-            Debug.Log("Puck switch halfcourt: Blue -> Red, award blue 0.0002");
+            //Debug.Log("Puck switch halfcourt: Blue -> Red, award blue 0.0002");
             gameManager.BlueReward(0.0002f);
         }
         lastPosY = transform.localPosition.y;
@@ -42,11 +42,11 @@ public class PuckController : MonoBehaviour
     void OnCollisionExit2D(Collision2D col)
     {
         if (col.gameObject.tag == "BluePlayer") {
-            Debug.Log("Blue Player Hit Puck, award blue 0.0001");
+            //Debug.Log("Blue Player Hit Puck, award blue 0.0001");
             gameManager.BlueReward(0.0001f);
         }
         else if (col.gameObject.tag == "RedPlayer") {
-            Debug.Log("Red Player Hit Puck, award red 0.0001");
+            //Debug.Log("Red Player Hit Puck, award red 0.0001");
             gameManager.RedReward(0.0001f);
         }
     }
