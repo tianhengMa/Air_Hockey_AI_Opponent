@@ -158,6 +158,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 8431099778810742067, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431099778810742067, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
+      propertyPath: forceMultiplier
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 8431099778810742072, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: Puck
       value: 
@@ -175,9 +183,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3861646928832772716}
     - target: {fileID: 8431099778810742072, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431099778810742072, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 7173137669766569669}
+    - target: {fileID: 8431099778810742073, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8431099778810742073, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
+      propertyPath: m_BehaviorType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
 --- !u!1 &4184981406700115313 stripped
@@ -208,21 +228,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7173137670307024090}
     m_Modifications:
-    - target: {fileID: 1426410176999552299, guid: c2ed761c91b8a41c2bb9d2336e803ed9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 2067207567696192499, guid: c2ed761c91b8a41c2bb9d2336e803ed9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3093748122969990206, guid: c2ed761c91b8a41c2bb9d2336e803ed9, type: 3}
       propertyPath: m_Name
       value: Board
-      objectReference: {fileID: 0}
-    - target: {fileID: 4032446154027077253, guid: c2ed761c91b8a41c2bb9d2336e803ed9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6474889873098004443, guid: c2ed761c91b8a41c2bb9d2336e803ed9, type: 3}
       propertyPath: m_RootOrder
@@ -317,7 +325,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 463085360812732742, guid: dc053063258861044abe5d7d25356906, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 463085360812732742, guid: dc053063258861044abe5d7d25356906, type: 3}
       propertyPath: m_LocalPosition.z
@@ -375,6 +383,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 7173137669766569669}
+    - target: {fileID: 5854389308737340425, guid: dc053063258861044abe5d7d25356906, type: 3}
+      propertyPath: m_Model
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc053063258861044abe5d7d25356906, type: 3}
 --- !u!1 &3861646928832772716 stripped

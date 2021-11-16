@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
     Vector2 PuckStartPosRed = new Vector2(0f, -4f);
     Vector2 PuckStartPosBlue = new Vector2(0f, 4f);
     PlayerId PuckStartSide = PlayerId.Red;
-    int MAX_STUCK_TIME = 30;
+    int MAX_STUCK_TIME = 5;
     int RedPlayerScore;
     int BluePlayerScore;
     float stuckStartTime;
@@ -102,14 +102,11 @@ public class GameManager : MonoBehaviour
 
         if (puckStuck && Time.time - stuckStartTime >= MAX_STUCK_TIME) {
             //Debug.Log ("PUCK IS STUCK!!!");
-            //BlueAgent.AddReward(-0.2f);
-            //RedAgent.AddReward(-0.2f);
             RestartLevel();
         }
     }
 
     void RestartLevel(){
-        //Debug.Log("Restart Level!!");
         // Losing side start the game next round
         if (PuckStartSide ==  PlayerId.Red){
             Puck.transform.localPosition = PuckStartPosRed;
