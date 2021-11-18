@@ -120,7 +120,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2473185605344620662, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6
+      value: -5.5
       objectReference: {fileID: 0}
     - target: {fileID: 2473185605344620662, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: m_LocalPosition.z
@@ -158,13 +158,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 5325367381669618837, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6998988339893540152, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 7711294145867817014, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8431099778810742067, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8431099778810742067, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: forceMultiplier
-      value: 20
+      value: 10.02
       objectReference: {fileID: 0}
     - target: {fileID: 8431099778810742072, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: Puck
@@ -184,7 +196,7 @@ PrefabInstance:
       objectReference: {fileID: 3861646928832772716}
     - target: {fileID: 8431099778810742072, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8431099778810742072, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: gameManager
@@ -193,10 +205,14 @@ PrefabInstance:
     - target: {fileID: 8431099778810742073, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: m_Model
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 5022602860645237092, guid: cb4c98250221b9b46bababeb053804d9, type: 3}
     - target: {fileID: 8431099778810742073, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: m_BehaviorType
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651852654179086085, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
@@ -216,7 +232,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 1625045341807132082}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4184981406700115313}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1a54abab006cd497bad47ae7f4778f34, type: 3}
   m_Name: 
@@ -325,7 +341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 463085360812732742, guid: dc053063258861044abe5d7d25356906, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 5.5
       objectReference: {fileID: 0}
     - target: {fileID: 463085360812732742, guid: dc053063258861044abe5d7d25356906, type: 3}
       propertyPath: m_LocalPosition.z
@@ -363,6 +379,18 @@ PrefabInstance:
       propertyPath: m_Name
       value: BluePlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 4980653854920365064, guid: dc053063258861044abe5d7d25356906, type: 3}
+      propertyPath: m_SortingOrder
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5709356727166689542, guid: dc053063258861044abe5d7d25356906, type: 3}
+      propertyPath: m_SortingOrder
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5854389308737340419, guid: dc053063258861044abe5d7d25356906, type: 3}
+      propertyPath: forceMultiplier
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5854389308737340424, guid: dc053063258861044abe5d7d25356906, type: 3}
       propertyPath: Puck
       value: 
@@ -386,6 +414,14 @@ PrefabInstance:
     - target: {fileID: 5854389308737340425, guid: dc053063258861044abe5d7d25356906, type: 3}
       propertyPath: m_Model
       value: 
+      objectReference: {fileID: 5022602860645237092, guid: 00838485ea3f2d546a2325bdd2580882, type: 3}
+    - target: {fileID: 6642315479817694773, guid: dc053063258861044abe5d7d25356906, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7915131260205229477, guid: dc053063258861044abe5d7d25356906, type: 3}
+      propertyPath: m_SortingOrder
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc053063258861044abe5d7d25356906, type: 3}

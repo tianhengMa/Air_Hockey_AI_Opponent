@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Unity.MLAgents;
 using Unity.MLAgents.Sensors;
 using Unity.MLAgents.Actuators;
@@ -20,6 +21,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject RedGoal;
     [SerializeField] GameObject BlueGoal;
     [SerializeField] GameObject HalfCourt;
+    [SerializeField] Text BlueScoreText;
+    [SerializeField] Text RedScoreText;
     Rigidbody2D rBodyPuck;
     Rigidbody2D rBodyRedPlayer;
     Rigidbody2D rBodyBluePlayer;
@@ -51,6 +54,10 @@ public class GameManager : MonoBehaviour
 
         RedPlayerScore = 0;
         BluePlayerScore = 0;
+
+        BlueScoreText.text = BluePlayerScore.ToString();
+        RedScoreText.text =  RedPlayerScore.ToString();
+
         puckStuck = false;
     }
 
@@ -65,6 +72,7 @@ public class GameManager : MonoBehaviour
         // Keep track of scores and assign rewards
         if (scoredPlayer == PlayerId.Blue) {
             BluePlayerScore += 1;
+            BlueScoreText.text = BluePlayerScore.ToString();
             BlueAgent.AddReward(1);
             RedAgent.AddReward(-1);
             PuckStartSide =  PlayerId.Red; // Losing side start the game next round
@@ -72,13 +80,15 @@ public class GameManager : MonoBehaviour
         }
         else {
             RedPlayerScore += 1;
+            RedScoreText.text =  RedPlayerScore.ToString();
             RedAgent.AddReward(1);
             BlueAgent.AddReward(-1);
             PuckStartSide =  PlayerId.Blue;
             Debug.Log("Red Score!! Current Score: Red: " + RedPlayerScore + " Blue: " + BluePlayerScore);
         }
-        RedAgent.EndEpisode();
-        BlueAgent.EndEpisode();
+        // Uncomment the following two lines for training
+        // RedAgent.EndEpisode();
+        // BlueAgent.EndEpisode();
         RestartLevel();
     }
 
