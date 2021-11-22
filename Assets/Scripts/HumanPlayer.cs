@@ -21,7 +21,7 @@ public class HumanPlayer : MonoBehaviour
         prevPos = newPos = new Vector2(-6, 0);
     }
 
-    // Update is called once per frame
+    // Must use FixedUpdate (called per fixed time period) instead of Update (called per frame) 
     void FixedUpdate()
     {
         // While pressing down the left mouse key

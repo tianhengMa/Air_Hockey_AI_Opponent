@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour
         rBodyRedPlayer = RedPlayer.GetComponent<Rigidbody2D>();
         rBodyBluePlayer = BluePlayer.GetComponent<Rigidbody2D>();
 
+        // Allow puck to pass through halfcourt line and goal lines
         Physics2D.IgnoreCollision(Puck.GetComponent<Collider2D>(), RedGoal.GetComponent<Collider2D>());
         Physics2D.IgnoreCollision(Puck.GetComponent<Collider2D>(), BlueGoal.GetComponent<Collider2D>());
         Physics2D.IgnoreCollision(Puck.GetComponent<Collider2D>(), HalfCourt.GetComponent<Collider2D>());

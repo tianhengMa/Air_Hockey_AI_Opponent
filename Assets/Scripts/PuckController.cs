@@ -19,10 +19,10 @@ public class PuckController : MonoBehaviour
     }
 
     void Update() {
-        if (transform.localPosition.y <= RedGoal.localPosition.y) { //ball touched red goal
+        if (transform.localPosition.y <= RedGoal.localPosition.y) { //puck touched red goal
             gameManager.Scored(PlayerId.Blue);
         }
-        if (transform.localPosition.y >= BlueGoal.localPosition.y) { //ball touched blue goal
+        if (transform.localPosition.y >= BlueGoal.localPosition.y) { //puck touched blue goal
             gameManager.Scored(PlayerId.Red);
         }
 
@@ -41,10 +41,12 @@ public class PuckController : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D col)
     {
+        // Blue Player touches puck, award 0.0001
         if (col.gameObject.tag == "BluePlayer") {
             //Debug.Log("Blue Player Hit Puck, award blue 0.0001");
             gameManager.BlueReward(0.0001f);
         }
+        // Red Player touches puck, award 0.0001
         else if (col.gameObject.tag == "RedPlayer") {
             //Debug.Log("Red Player Hit Puck, award red 0.0001");
             gameManager.RedReward(0.0001f);

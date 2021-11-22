@@ -23,7 +23,6 @@ public class AIPlayer : Agent
     public override void CollectObservations(VectorSensor sensor)
     {
         // AIPlayer Distance Observation
-        
         Vector2 AIPlayerToPuck = Puck.transform.localPosition - Player.transform.localPosition;
         sensor.AddObservation(AIPlayerToPuck.normalized);
         sensor.AddObservation(AIPlayerToPuck.magnitude);
