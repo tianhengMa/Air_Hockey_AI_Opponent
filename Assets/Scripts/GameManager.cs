@@ -77,7 +77,7 @@ public class GameManager : MonoBehaviour
             BlueAgent.AddReward(1);
             RedAgent.AddReward(-1);
             PuckStartSide =  PlayerId.Red; // Losing side start the game next round
-            Debug.Log("Blue Score!! Current Score: Red: " + RedPlayerScore + " Blue: " + BluePlayerScore);
+            // Debug.Log("Blue Score!! Current Score: Red: " + RedPlayerScore + " Blue: " + BluePlayerScore);
         }
         else {
             RedPlayerScore += 1;
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
             RedAgent.AddReward(1);
             BlueAgent.AddReward(-1);
             PuckStartSide =  PlayerId.Blue;
-            Debug.Log("Red Score!! Current Score: Red: " + RedPlayerScore + " Blue: " + BluePlayerScore);
+            // Debug.Log("Red Score!! Current Score: Red: " + RedPlayerScore + " Blue: " + BluePlayerScore);
         }
         // Uncomment the following two lines for training
         // RedAgent.EndEpisode();
@@ -117,8 +117,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void RestartLevel(){
+    public void RestartLevel(){
         // Losing side start the game next round
+        //Debug.Log("Restart Level!");
         if (PuckStartSide ==  PlayerId.Red){
             Puck.transform.localPosition = PuckStartPosRed;
         } else {

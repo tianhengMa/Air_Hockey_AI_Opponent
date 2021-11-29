@@ -52,6 +52,8 @@ MonoBehaviour:
   RedGoal: {fileID: 7476160903670137544}
   BlueGoal: {fileID: 2298342785177007066}
   HalfCourt: {fileID: 5100996266182040694}
+  BlueScoreText: {fileID: 0}
+  RedScoreText: {fileID: 0}
   num_rounds: 0
 --- !u!114 &7173137669766569675
 MonoBehaviour:
@@ -176,7 +178,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8431099778810742067, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: forceMultiplier
-      value: 10.02
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8431099778810742072, guid: 076ce5532b5af6547b9dca1374b51fe2, type: 3}
       propertyPath: Puck
@@ -389,7 +391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5854389308737340419, guid: dc053063258861044abe5d7d25356906, type: 3}
       propertyPath: forceMultiplier
-      value: 20
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5854389308737340424, guid: dc053063258861044abe5d7d25356906, type: 3}
       propertyPath: Puck
@@ -411,6 +413,10 @@ PrefabInstance:
       propertyPath: gameManager
       value: 
       objectReference: {fileID: 7173137669766569669}
+    - target: {fileID: 5854389308737340424, guid: dc053063258861044abe5d7d25356906, type: 3}
+      propertyPath: forceMultiplier
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 5854389308737340425, guid: dc053063258861044abe5d7d25356906, type: 3}
       propertyPath: m_Model
       value: 
