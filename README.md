@@ -5,7 +5,12 @@ This project is a **single-player Air Hockey game**. The human player (*red*) ca
 
 In *AI vs Human* mode, user can control the red player's position by dragging the mouse while pressing the left mouse key. Try to hit the puck into the opponent's goal to score. In *AI vs AI* mode, user can watch how two AI players play against each other. 
 
+## Download:
+In the code repository, download Air_Hockey_AI_Opponent.exe. Double click the .exe file and enjoy the air hockey game I made!
+
 ## Demo:
+In the code repository, download Air_Hockey_AI_Opponent.exe. Double click the .exe file and enjoy the air hockey game I made! Here is a demo of the game:
+
 https://user-images.githubusercontent.com/37155540/143982214-270d0b4f-122f-41d7-8569-2f1c331391ae.mp4
 
 ## Training:
