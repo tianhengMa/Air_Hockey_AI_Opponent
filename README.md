@@ -3,14 +3,17 @@
 ## Summary:
 This project is a **single-player Air Hockey game**. The human player (*red*) can play against an AI opponent (*blue*). I trained the AI model using **Deep Reinforcement Learning** with Unity's [ML-Agent](https://github.com/Unity-Technologies/ml-agents/blob/release_18_docs/docs/Readme.md) package. Through a process called **self-play**, the model is able to learn how to play air hockey from scratch by playing it with itself. 
 
-In *AI vs Human* mode, user can control the red player's position by dragging the mouse while pressing the left mouse key. Try to hit the puck into the opponent's goal to score. In *AI vs AI* mode, user can watch how two AI players play against each other. 
+## Play:
+**Clone** this repository, go inside **Build** folder and open **Air_Hockey_AI_Opponent.exe**. 
 
-## Download:
-In the code repository, download Air_Hockey_AI_Opponent.exe. Double click the .exe file and enjoy the air hockey game I made!
+In **AI vs Human** mode, you can control the red player's position by dragging the mouse while pressing the left mouse key. Try to hit the puck into the opponent's goal to score. In **AI vs AI** mode, you can watch how two AI players play against each other. 
+
+You can also hit the **pause** button anytime to restart, switch game mode, or quit the game. 
+
+Enjoy the air hockey game I made!
+
 
 ## Demo:
-In the code repository, download Air_Hockey_AI_Opponent.exe. Double click the .exe file and enjoy the air hockey game I made! Here is a demo of the game:
-
 https://user-images.githubusercontent.com/37155540/143982214-270d0b4f-122f-41d7-8569-2f1c331391ae.mp4
 
 ## Training:
