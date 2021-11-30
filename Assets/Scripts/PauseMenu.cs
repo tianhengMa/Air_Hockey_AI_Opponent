@@ -14,7 +14,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
     [SerializeField] GameObject pauseMenuUI;
     [SerializeField] Text toggleModeButtonText;
-    GameMode gameMode;
+    public GameMode gameMode;
 
     void Start() {
         pauseMenuUI.SetActive(false);

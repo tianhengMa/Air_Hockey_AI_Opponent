@@ -23,6 +23,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject HalfCourt;
     [SerializeField] Text BlueScoreText;
     [SerializeField] Text RedScoreText;
+    [SerializeField] GameObject Canvas;
+    GameMode gameMode;
     Rigidbody2D rBodyPuck;
     Rigidbody2D rBodyRedPlayer;
     Rigidbody2D rBodyBluePlayer;
@@ -48,6 +50,8 @@ public class GameManager : MonoBehaviour
         rBodyRedPlayer = RedPlayer.GetComponent<Rigidbody2D>();
         rBodyBluePlayer = BluePlayer.GetComponent<Rigidbody2D>();
 
+        gameMode = Canvas.GetComponent<PauseMenu>().gameMode;
+
         // Allow puck to pass through halfcourt line and goal lines
         Physics2D.IgnoreCollision(Puck.GetComponent<Collider2D>(), RedGoal.GetComponent<Collider2D>());
         Physics2D.IgnoreCollision(Puck.GetComponent<Collider2D>(), BlueGoal.GetComponent<Collider2D>());
@@ -65,6 +69,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Check whether game is AI vs AI or AI vs Human
+        gameMode = Canvas.GetComponent<PauseMenu>().gameMode;
+        if (gameMode == GameMode.AIvsAI) {
+            RedPlayer.GetComponent<AIPlayer>().enabled = true;
+            RedPlayer.GetComponent<HumanPlayer>().enabled = false;
+        } else {
+            RedPlayer.GetComponent<AIPlayer>().enabled = false;
+            RedPlayer.GetComponent<HumanPlayer>().enabled = true;
+        }
         CheckStuckedPuck();
     }
 
